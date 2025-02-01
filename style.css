@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Bona Nova SC", serif;
+   
+}
+
+#map {
+    height: 100vh;
+    width: 130vh;
+    border-radius: 0.5rem;
+}
+
+.container {
+    background-color: #051014;
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+.weather{
+    
+    padding: 3vh 15vh;
+    justify-content: top;
+}
+
+.gif{
+    margin: 2vh 5vh;
+    width: 40vh;
+    height: 40vh;
+}
+
+.icon{
+    color: black;
+    height: 10vh;
+    width: 10vh;
+    margin-right: 5vh;
+}
+
+.weather-info{
+    display: flex;
+    align-items: center;
+}
+
+.detailsTitle{
+    font-size: 5vh;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.weatherDetails{
+    font-size: 2.5vh;
+    line-height: 5vh;
+    margin: 3vh;
+}
+
+.loadMsg{
+    background-color: aliceblue;
+    color: black;
+    padding: 0.5vw 1vw;
+    border-radius: 1vw;
+}
