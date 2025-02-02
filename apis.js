@@ -21,3 +21,7 @@ let Hot = "xhC6odm0c5kFZQ5MGh";
 let Cold = "dUR62cwTf5aMGMOmwy";
 let Freezing_Fog = "dwdBXHwYtuQV21eeF7";
 let Drizzle= "AQ60Mqpz7sJLK4DiOW";
+
+
+
+let map_api_key = "f5855062-a557-4018-8d6e-c03f13450bcd";
