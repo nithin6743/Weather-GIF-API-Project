@@ -58,6 +58,7 @@
 .loadMsg{
     background-color: aliceblue;
     color: black;
-    padding: 0.5vw 1vw;
+    padding: 0.2vw 1vw;
     border-radius: 1vw;
+    justify-content: center;
 }
