@@ -1,6 +1,4 @@
-let weather_api = "https://api.weatherapi.com/v1/current.json?key=9025db8dbabb430d952165219252901&q=17.465224782058666,78.54138010704175";
 
-let pet_api = "https://api.giphy.com/v1/gifs/{GIF_ID}?api_key=xbzOMuOZIy2p0uPqHHyAjhs6QrQNQKht";
 
 let Clear = "wHUWuJWg6iRRQWTBd1";
 let Sunny = "khzLJR9sTppTUpBEia";

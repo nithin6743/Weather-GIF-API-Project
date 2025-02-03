@@ -1,3 +1,28 @@
+const weatherGIFs = {
+  Clear: "wHUWuJWg6iRRQWTBd1",
+  Sunny: "khzLJR9sTppTUpBEia",
+  Partly_Cloudy: "Oh1rKdcE3IFOpfeimr",
+  Cloudy: "Oh1rKdcE3IFOpfeimr",
+  Overcast: "Oh1rKdcE3IFOpfeimr",
+  Mist: "dUR62cwTf5aMGMOmwy",
+  Fog: "dUR62cwTf5aMGMOmwy",
+  Light_Rain_shower: "AQ60Mqpz7sJLK4DiOW",
+  Heavy_Rain: "yGhTOpxFbAUhuBJG30",
+  Thunderstorm: "eyoDFbM8UwpIsjG8iI",
+  Light_Snow: "dwdBXHwYtuQV21eeF7",
+  Heavy_Snow: "lOgHL3b6ogY6IEkq6q",
+  Sleet: "dUR62cwTf5aMGMOmwy",
+  Hail: "8hhfYrbc0XugC1XIeO",
+  Windy: "lOgHL3b6ogY6IEkq6q",
+  Hot: "xhC6odm0c5kFZQ5MGh",
+  Cold: "dUR62cwTf5aMGMOmwy",
+  Freezing_Fog: "dwdBXHwYtuQV21eeF7",
+  Drizzle: "AQ60Mqpz7sJLK4DiOW",
+};
+
+let pet_api = "";
+
+
 // Initialize the map India coordinates
 let map = L.map('map').setView([22.5937, 78.9629], 5);
 
@@ -24,6 +49,7 @@ let weatherText = document.querySelector("#weather");
 let humidityText = document.querySelector("#humidity");
 let windSpeed = document.querySelector("#wind-speed");
 let weatherIcon = document.querySelector(".icon");
+let gif = document.querySelector(".gif");
 
 map.on('click', async function (e) {
   let { lat, lng } = e.latlng;
@@ -46,6 +72,13 @@ map.on('click', async function (e) {
     let wind = location.current.wind_kph;
     let icon = location.current.condition.icon;
     let icon_url = `https:${icon}`;
+    let weathergif;
+
+    if (weatherCondition.includes("RAIN")) {
+      weathergif = "AQ60Mqpz7sJLK4DiOW";  // Default GIF for rain-related conditions
+    } else {
+      weathergif = weatherCondition.replace(/ /g, "_");
+    }
 
     // Remove the previous marker if it exists
     if (currentMarker) {
@@ -70,6 +103,12 @@ map.on('click', async function (e) {
     humidityText.textContent = `${humidity}%`;
     windSpeed.textContent = `${wind} km/h`;
     weatherIcon.src = icon_url;
+    let gifID = weatherGIFs[weatherCondition];
+    let pet_url = `https://api.giphy.com/v1/gifs/${gifID}?api_key=xbzOMuOZIy2p0uPqHHyAjhs6QrQNQKht`;
+    let pet_response = await fetch(pet_url);
+    let gifData = await pet_response.json();
+    gif.src = gifData.data.images.original.url;
+    console.log(gif.src);
 
   } catch (error) {
     console.error("Error fetching weather data:", error);
