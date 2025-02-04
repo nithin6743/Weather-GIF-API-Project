@@ -76,7 +76,7 @@ map.on('click', async function (e) {
     if (weatherCondition.toLowerCase().includes("rain")) {
       weathergif = "Light_rain_shower"; // Default GIF for rain-related conditions
     }else if (weatherCondition.toLowerCase().includes("snow")) {
-      weathergif = "Light_Snow"; // Default GIF for snow-related conditions
+      weathergif = "Light_rain_shower"; // Default GIF for snow-related conditions
     }else {
       weathergif = weatherCondition.replace(/ /g, "_");
       console.log(weathergif);
