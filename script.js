@@ -6,8 +6,7 @@ const weatherGIFs = {
   Overcast: "Oh1rKdcE3IFOpfeimr",
   Mist: "dUR62cwTf5aMGMOmwy",
   Fog: "dUR62cwTf5aMGMOmwy",
-  Light_Rain_shower: "AQ60Mqpz7sJLK4DiOW",
-  Heavy_Rain: "yGhTOpxFbAUhuBJG30",
+  Light_rain_shower: "yGhTOpxFbAUhuBJG30",
   Thunderstorm: "eyoDFbM8UwpIsjG8iI",
   Light_Snow: "dwdBXHwYtuQV21eeF7",
   Heavy_Snow: "lOgHL3b6ogY6IEkq6q",
@@ -57,13 +56,11 @@ map.on('click', async function (e) {
   let url = `https://api.weatherapi.com/v1/current.json?key=9025db8dbabb430d952165219252901&q=${lat},${lng}`;
 
   try {
-    // Fetch the weather data
     let response = await fetch(url);
     if (!response.ok) throw new Error("Failed to fetch weather data");
 
     let location = await response.json();
 
-    // Extract weather details
     let place = location.location.name;
     let country = location.location.country;
     let temp_c = location.current.temp_c;
@@ -74,36 +71,36 @@ map.on('click', async function (e) {
     let icon_url = `https:${icon}`;
     let weathergif;
 
-    if (weatherCondition.includes("RAIN")) {
-      weathergif = "AQ60Mqpz7sJLK4DiOW";  // Default GIF for rain-related conditions
+    console.log(weatherCondition, lat, lng);
+
+    if (weatherCondition.toLowerCase().includes("rain")) {
+      weathergif = "Light_rain_shower"; // Default GIF for rain-related conditions
     } else {
       weathergif = weatherCondition.replace(/ /g, "_");
+      console.log(weathergif);
     }
 
-    // Remove the previous marker if it exists
     if (currentMarker) {
       map.removeLayer(currentMarker);
     }
 
-    // Add a new marker at the clicked location
     currentMarker = L.marker([lat, lng])
       .addTo(map)
       .bindPopup(`Place: ${place}, Country: ${country}`)
       .openPopup();
 
-    // Remove the loading message
     if (loadMsg) {
       loadMsg.remove();
     }
 
-    // Display the weather details
     location_msg.textContent = `${place}, ${country}`;
     temperature.textContent = `${temp_c}°C`;
     weatherText.textContent = `${weatherCondition}`;
     humidityText.textContent = `${humidity}%`;
     windSpeed.textContent = `${wind} km/h`;
     weatherIcon.src = icon_url;
-    let gifID = weatherGIFs[weatherCondition];
+
+    let gifID = weatherGIFs[weathergif] || weatherGIFs["Clear"]; // Fallback to "Clear" GIF
     let pet_url = `https://api.giphy.com/v1/gifs/${gifID}?api_key=xbzOMuOZIy2p0uPqHHyAjhs6QrQNQKht`;
     let pet_response = await fetch(pet_url);
     let gifData = await pet_response.json();
@@ -114,3 +111,4 @@ map.on('click', async function (e) {
     console.error("Error fetching weather data:", error);
   }
 });
+
