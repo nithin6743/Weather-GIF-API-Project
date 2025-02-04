@@ -15,7 +15,7 @@ const weatherGIFs = {
   Windy: "lOgHL3b6ogY6IEkq6q",
   Hot: "xhC6odm0c5kFZQ5MGh",
   Cold: "dUR62cwTf5aMGMOmwy",
-  Freezing_Fog: "dwdBXHwYtuQV21eeF7",
+  Freezing_fog: "dwdBXHwYtuQV21eeF7",
   Drizzle: "AQ60Mqpz7sJLK4DiOW",
 };
 
@@ -75,7 +75,9 @@ map.on('click', async function (e) {
 
     if (weatherCondition.toLowerCase().includes("rain")) {
       weathergif = "Light_rain_shower"; // Default GIF for rain-related conditions
-    } else {
+    }else if (weatherCondition.toLowerCase().includes("snow")) {
+      weathergif = "Light_Snow"; // Default GIF for snow-related conditions
+    }else {
       weathergif = weatherCondition.replace(/ /g, "_");
       console.log(weathergif);
     }
