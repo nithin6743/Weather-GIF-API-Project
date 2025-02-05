@@ -13,6 +13,10 @@
     /* border-radius: 0.5rem; */
 }
 
+body{
+    background-color: #051014;
+}
+
 .container {
     background-color: #051014;
     display: flex;
