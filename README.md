@@ -56,6 +56,8 @@ Simply open the `index.html` file in your web browser.
 ## 📸 Screenshots  
 
 ### Main Interface  ![image](https://github.com/user-attachments/assets/83c86a90-09eb-44eb-9b0d-0828afb54969)
+![image](https://github.com/user-attachments/assets/8f23a934-e034-47df-853e-1d3b06cafaa3)
+
 
 
 ---
@@ -64,12 +66,6 @@ Simply open the `index.html` file in your web browser.
 
 1. **Weather API:** Provides weather data based on latitude and longitude.  
 2. **GIPHY API:** Fetches weather-specific GIFs based on weather conditions.  
-
----
-
-## 📝 License  
-
-This project is licensed under the MIT License.  
 
 ---
 
