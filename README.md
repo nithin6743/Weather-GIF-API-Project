@@ -55,8 +55,8 @@ Simply open the `index.html` file in your web browser.
 
 ## 📸 Screenshots  
 
-### Main Interface  
-![Weather & GIF API Project](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3cydDM3ZXQ5d3luMTQyNXRycDc1ZHdzNWE3aWtsdHFmemw0ejc1byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/pLY8QHrlL9lKEpvdKQ/giphy.gif)  
+### Main Interface  ![image](https://github.com/user-attachments/assets/83c86a90-09eb-44eb-9b0d-0828afb54969)
+
 
 ---
 
