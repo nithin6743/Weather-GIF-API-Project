@@ -38,7 +38,7 @@ body{
     color: black;
     height: 3rem;
     width: 3rem;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
 }
 
 .weather-info{
@@ -47,7 +47,7 @@ body{
 }
 
 .detailsTitle{
-    font-size: 2rem;
+    font-size: 5vh;
     font-weight: bold;
     justify-content: center;
 }
